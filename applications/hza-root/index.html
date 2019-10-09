@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HZA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="importmap-type" content="systemjs-importmap" />
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "dashboard": "http://localhost:8082/app.js",
+          "persona": "http://localhost:8083/app.js",
+          "headerComponent": "http://localhost:8084/app.js",
+          "hypotheek": "http://localhost:8085/app.js",
+          "single-spa": "./node_modules/single-spa/lib/umd/single-spa.min.js",
+          "vue": "./node_modules/vue/dist/vue.js",
+          "vue-router": "./node_modules/vue-router/dist/vue-router.min.js"
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/import-map-overrides@1.7.2/dist/import-map-overrides.js"></script>
+
+    <script src="./node_modules/systemjs/dist/system.min.js"></script>
+    <script src="./node_modules/systemjs/dist/extras/amd.min.js"></script>
+    <script src="./node_modules/systemjs/dist/extras/named-exports.js"></script>
+    <script src="./node_modules/systemjs/dist/extras/named-register.min.js"></script>
+    <script src="./node_modules/systemjs/dist/extras/use-default.min.js"></script>
+  </head>
+  <body>
+    <import-map-overrides-full
+      show-when-local-storage="overrides-ui"
+    ></import-map-overrides-full>
+    <script>
+      (() => {
+        Promise.all([
+          System.import('single-spa'),
+          System.import('vue'),
+          System.import('vue-router')
+        ]).then(modules => {
+          var singleSpa = modules[0];
+          var Vue = modules[1];
+          var VueRouter = modules[2];
+          Vue.use(VueRouter);
+          singleSpa.registerApplication(
+            'headerComponent',
+            () => System.import('headerComponent'),
+            location => true
+          );
+          singleSpa.registerApplication(
+            'dashboard',
+            () => System.import('dashboard'),
+            location => location.pathname === '' || location.pathname === '\/'
+          );
+          singleSpa.registerApplication(
+            'persona',
+            () => System.import('persona'),
+            location => location.pathname.startsWith('/over-ons')
+          );
+          singleSpa.registerApplication(
+            'hypotheek',
+            () => System.import('hypotheek'),
+            location => location.pathname.startsWith('/hypotheek-samenstellen')
+          );
+          singleSpa.start();
+        });
+      })();
+    </script>
+  </body>
+</html>

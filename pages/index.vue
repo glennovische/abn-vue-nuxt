@@ -1,18 +1,14 @@
 <template>
   <div>
-    <h1>Events</h1>
-    <event-card
-      v-for="(event, index) in events"
-      :key="index"
-      :event="event"
-      :data-index="index"
-    />
+    <Header />
+    <side-bar />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import EventCard from '@/components/EventCard.vue'
+import SideBar from '@/components/SideBar.vue'
+import Header from '@/components/Header.vue'
 
 export default {
   head() {
@@ -21,7 +17,8 @@ export default {
     }
   },
   components: {
-    EventCard
+    SideBar,
+    Header
   },
   computed: mapState({
     events: (state) => state.events.events

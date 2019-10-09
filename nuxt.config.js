@@ -1,7 +1,7 @@
 import EventService from './services/EventServices.js'
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
    ** Headers of the page
    */
@@ -29,7 +29,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    { src: '~plugins//slide-menu', ssr: false },
+    { src: '~plugins//emerald' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
