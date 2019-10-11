@@ -1,9 +1,5 @@
-import EventService from './services/EventServices.js'
-
 export default {
-  mode: 'spa',
-  srcDir: __dirname,
-  buildDir: '.nuxt',
+  mode: 'universal',
   /*
    ** Headers of the page
    */
@@ -23,7 +19,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#39b982' },
+  loading: { color: '#fff' },
   /*
    ** Global CSS
    */
@@ -31,10 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    { src: '~plugins//slide-menu', ssr: false },
-    { src: '~plugins//emerald' }
-  ],
+  plugins: [{ src: '~plugins//emerald' }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -48,9 +41,14 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
-    '@nuxtjs/axios',
-    '@cknow/nuxt-modular'
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios'
   ],
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {},
   /*
    ** Build configuration
    */
@@ -60,23 +58,15 @@ export default {
      */
     extend(config, ctx) {}
   },
-  generate: {
-    routes: () => {
-      return EventService.getEvents().then((response) => {
-        return response.data.map((event) => {
-          return '/event/' + event.id
-        })
-      })
-    }
+  chainWebpack: (config) => {
+    config.devServer.set('inline', false)
+    config.devServer.set('hot', false)
+    config.externals(['vue', 'vue-router'])
   },
-  router: {
-    extendRoutes(routes, resolve) {
-      routes.push({
-        path: '/',
-        components: {
-          default: resolve(__dirname, 'pages/index') // or routes[index].component
-        }
-      })
+  filenameHashing: false,
+  devServer: {
+    headers: {
+      'Access-Control-Allow-Origin': '*'
     }
   }
 }
