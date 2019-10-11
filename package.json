@@ -7,7 +7,9 @@
   "scripts": {
     "main:dev": "nuxt --config-file nuxt.config.js",
     "dev": "npm run main:dev",
-    "build": "nuxt build "
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@cknow/nuxt-modular": "^1.0.0",

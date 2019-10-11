@@ -1,7 +1,7 @@
 import EventService from './services/EventServices.js'
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
   srcDir: __dirname,
   buildDir: '.nuxt',
   /*
