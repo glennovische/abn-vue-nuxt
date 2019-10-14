@@ -99,13 +99,13 @@
 
 <script>
 import { mapState } from 'vuex'
-import Documenten from '../modular/hza-documenten/pages/index'
-import Woning from '../modular/hza-woning/pages/index'
-import OverOns from '../modular/hza-over-ons/pages/index'
-import Situatie from '../modular/hza-situatie/pages/index'
-import Hypotheek from '../modular/hza-hypotheek/pages/index'
-import Historie from '../modular/hza-historie/pages/index'
-import HeaderComponent from '../modular/hza-header/pages/index'
+import Woning from '~/modular/hza-woning/pages/index'
+import OverOns from '~/modular/hza-over-ons/pages/index'
+import Situatie from '~/modular/hza-situatie/pages/index'
+import Hypotheek from '~/modular/hza-hypotheek/pages/index'
+import Historie from '~/modular/hza-historie/pages/index'
+import HeaderComponent from '~/modular/hza-header/pages/index'
+import Documenten from '~/modular/hza-documenten/pages/index'
 
 export default {
   head() {

@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import Tile from '../../../components/Tile.vue'
+import Tile from '~/components/Tile.vue'
 export default {
   name: 'Hypotheek',
   components: {
