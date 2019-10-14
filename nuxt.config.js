@@ -1,7 +1,10 @@
 import EventService from './services/EventServices.js'
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
+  /*
+   ** Spa can not be build, Universal outputs console errors.
+   */
   srcDir: __dirname,
   buildDir: '.nuxt',
   /*
