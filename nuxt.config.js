@@ -1,5 +1,3 @@
-import EventService from './services/EventServices.js'
-
 export default {
   mode: 'spa',
   /*
@@ -36,7 +34,8 @@ export default {
    */
   plugins: [
     { src: '~plugins//slide-menu', ssr: false },
-    { src: '~plugins//emerald' }
+    { src: '~plugins//emerald' },
+    { src: '~plugins/main.js' }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -62,15 +61,6 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
-  },
-  generate: {
-    routes: () => {
-      return EventService.getEvents().then((response) => {
-        return response.data.map((event) => {
-          return '/event/' + event.id
-        })
-      })
-    }
   },
   router: {
     extendRoutes(routes, resolve) {

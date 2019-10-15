@@ -1,6 +1,5 @@
 <template>
   <div class="nav">
-    <nuxt-link to="/" class="brand">Real World Events</nuxt-link>
     <no-ssr>
       <div class="fade-in">
         <SlideMenu width="500" right>

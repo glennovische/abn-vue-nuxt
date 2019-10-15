@@ -98,7 +98,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import Woning from '~/modular/hza-woning/pages/index'
 import OverOns from '~/modular/hza-over-ons/pages/index'
 import Situatie from '~/modular/hza-situatie/pages/index'
@@ -121,19 +120,6 @@ export default {
     Situatie,
     Hypotheek,
     Historie
-  },
-  computed: mapState({
-    events: (state) => state.events.events
-  }),
-  async fetch({ store, error }) {
-    try {
-      await store.dispatch('events/fetchEvents')
-    } catch (e) {
-      error({
-        statusCode: 503,
-        message: 'Op dit moment niet beschikbaar, probeer later opnieuw'
-      })
-    }
   }
 }
 </script>
@@ -142,7 +128,7 @@ export default {
 @import '../assets/_emerald_variables.scss';
 
 .dashboard {
-  height: 100vh;
+  height: calc(100vh - 72px);
   &-summary {
     max-width: 300px;
     display: flex;

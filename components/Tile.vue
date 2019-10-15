@@ -1,5 +1,5 @@
 <template>
-  <div class="tile" :class="tileClass" v-bind="$attrs" v-on="$listeners">
+  <div class="tile" :class="tileClass">
     <div v-if="hasIcon" class="em-icon em-icon-size-9" :class="iconClass"></div>
     <span><slot /></span>
   </div>
@@ -7,7 +7,6 @@
 
 <script>
 export default {
-  inheritAttrs: false,
   props: {
     tileClass: {
       type: String,
@@ -29,15 +28,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/_emerald_variables.scss';
+@import '~/assets/_emerald_variables.scss';
 
 .tile {
-  max-width: 200px;
-  height: 200px;
+  width: 100%;
+  height: auto;
   margin-right: 1rem;
   margin-bottom: 1rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   align-self: center;
@@ -45,6 +43,42 @@ export default {
   box-shadow: $em-box-shadow-tile;
   &:last-of-type {
     margin-right: 0;
+  }
+
+  &.square {
+    max-width: 200px;
+    height: 100%;
+    flex-direction: column;
+    &.small {
+      max-width: 150px;
+      height: 150px;
+    }
+
+    &.medium {
+      max-width: 200px;
+      height: 200px;
+    }
+
+    &.large {
+      max-width: 250px;
+      height: 250px;
+    }
+  }
+
+  &.small {
+    height: 150px;
+  }
+
+  &.medium {
+    height: 200px;
+  }
+
+  &.large {
+    height: 250px;
+  }
+
+  &.round {
+    border-radius: 50%;
   }
 }
 </style>
