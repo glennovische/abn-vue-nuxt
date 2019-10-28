@@ -1,5 +1,5 @@
 export default {
-  mode: 'spa',
+  mode: 'universal',
   /*
    ** Spa can not be build, Universal outputs console errors.
    */
@@ -28,7 +28,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/_emerald_variables.scss', '~/assets/scss/main.scss'],
   /*
    ** Plugins to load before mounting the App
    */

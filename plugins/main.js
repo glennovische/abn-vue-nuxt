@@ -1,7 +1,17 @@
 import Vue from 'vue'
+import numeral from 'numeral'
+
+// with options
+Vue.use(numeral, {
+  locale: 'nl-nl'
+})
 
 Vue.filter('toEURO', function(value) {
   return `€${value}`
+})
+
+Vue.filter('toThousand', function(value) {
+  return numeral(value).format('0,0')
 })
 
 Vue.filter('Upper', function(value) {

@@ -21,7 +21,7 @@
             <li><span>Opgeslagen berekeningen</span></li>
           </ul>
         </div>
-        <Situatie />
+        <One />
         <div class="sidebar right col-3">
           <div class="bonnetje">
             <h4>Berekening</h4>
@@ -72,12 +72,15 @@
 </template>
 
 <script>
-import Situatie from '~/modular/hza-situatie/pages/index'
+// Modulars
+import One from '~/modular/hza-situatie/pages/step1/one'
+
+// Components
 
 export default {
   layout: 'dashboard',
   components: {
-    Situatie
+    One
   }
 }
 </script>

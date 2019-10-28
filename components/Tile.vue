@@ -29,10 +29,10 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/_emerald_variables.scss';
-
 .tile {
   width: 100%;
   height: auto;
+  background-color: $white;
   margin-right: 1rem;
   margin-bottom: 1rem;
   display: flex;
@@ -44,7 +44,6 @@ export default {
   &:last-of-type {
     margin-right: 0;
   }
-
   &.square {
     max-width: 200px;
     height: 100%;
@@ -53,30 +52,24 @@ export default {
       max-width: 150px;
       height: 150px;
     }
-
     &.medium {
       max-width: 200px;
       height: 200px;
     }
-
     &.large {
       max-width: 250px;
       height: 250px;
     }
   }
-
   &.small {
     height: 150px;
   }
-
   &.medium {
     height: 200px;
   }
-
   &.large {
     height: 250px;
   }
-
   &.round {
     border-radius: 50%;
   }

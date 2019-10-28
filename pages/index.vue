@@ -1,6 +1,7 @@
 <template>
   <div>
     <HeaderComponent />
+    <Menu />
     <div class="dashboard">
       <b-card no-body>
         <b-tabs class="dashboard-tabs" vertical>
@@ -106,6 +107,8 @@ import Historie from '~/modular/hza-historie/pages/index'
 import HeaderComponent from '~/modular/hza-header/pages/index'
 import Documenten from '~/modular/hza-documenten/pages/index'
 
+import Menu from '~/components/menu'
+
 export default {
   head() {
     return {
@@ -119,13 +122,14 @@ export default {
     OverOns,
     Situatie,
     Hypotheek,
-    Historie
+    Historie,
+    Menu
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/_emerald_variables.scss';
+@import '~/assets/_emerald_variables.scss';
 
 .dashboard {
   height: calc(100vh - 72px);
