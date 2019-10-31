@@ -1,7 +1,5 @@
 <template>
   <div>
-    <HeaderComponent />
-    <Menu />
     <div class="dashboard">
       <b-card no-body>
         <b-tabs class="dashboard-tabs" vertical>
@@ -104,10 +102,7 @@ import OverOns from '~/modular/hza-over-ons/pages/index'
 import Situatie from '~/modular/hza-situatie/pages/index'
 import Hypotheek from '~/modular/hza-hypotheek/pages/index'
 import Historie from '~/modular/hza-historie/pages/index'
-import HeaderComponent from '~/modular/hza-header/pages/index'
 import Documenten from '~/modular/hza-documenten/pages/index'
-
-import Menu from '~/components/menu'
 
 export default {
   head() {
@@ -115,15 +110,14 @@ export default {
       title: 'HZA Dashboard'
     }
   },
+  layout: 'dashboard',
   components: {
-    HeaderComponent,
     Documenten,
     Woning,
     OverOns,
     Situatie,
     Hypotheek,
-    Historie,
-    Menu
+    Historie
   }
 }
 </script>

@@ -13,7 +13,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  layout: 'situation',
+  name: 'Situatie',
+  components: {}
+}
 </script>
 
 <style lang="scss" scoped></style>

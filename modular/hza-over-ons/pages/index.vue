@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  layout: 'dashboard',
   name: 'OverOns'
 }
 </script>

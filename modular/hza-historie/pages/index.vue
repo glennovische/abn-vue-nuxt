@@ -1,12 +1,13 @@
 <template>
   <div>
-    <h1>Hier komt onze hypotheek</h1>
+    <h1>Hier komt onze Historie</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Hypotheek'
+  name: 'Hypotheek',
+  layout: 'dashboard'
 }
 </script>
 

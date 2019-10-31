@@ -4,13 +4,13 @@
       class="container d-flex justify-content-between align-items-center h-100"
     >
       <li><nuxt-link to="/">Dashboard</nuxt-link></li>
-      <li><nuxt-link to="/hza-woning">Over on</nuxt-link></li>
+      <li><nuxt-link to="/hza-over-ons">Over ons</nuxt-link></li>
       <li><nuxt-link to="/hza-woning">Woning</nuxt-link></li>
-      <li><nuxt-link to="/hza-woning">Situatie</nuxt-link></li>
-      <li><nuxt-link to="/hza-woning">Hypotheek</nuxt-link></li>
-      <li><nuxt-link to="/hza-woning">Documenten</nuxt-link></li>
-      <li><nuxt-link to="/hza-woning">Historie</nuxt-link></li>
-      <li><nuxt-link to="/hza-woning">Advies</nuxt-link></li>
+      <li><nuxt-link to="/hza-situatie">Situatie</nuxt-link></li>
+      <li><nuxt-link to="/hza-hypotheek">Hypotheek</nuxt-link></li>
+      <li><nuxt-link to="/hza-documenten">Documenten</nuxt-link></li>
+      <li><nuxt-link to="/hza-historie">Historie</nuxt-link></li>
+      <li><nuxt-link to="/hza-advies">Advies</nuxt-link></li>
     </ul>
   </nav>
 </template>
@@ -28,7 +28,7 @@ nav {
   height: 48px;
 }
 
-.nuxt-link-active {
+.nuxt-link-exact-active {
   position: relative;
   display: flex;
   align-items: center;

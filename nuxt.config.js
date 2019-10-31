@@ -1,5 +1,5 @@
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
    ** Spa can not be build, Universal outputs console errors.
    */
@@ -35,7 +35,8 @@ export default {
   plugins: [
     { src: '~plugins//slide-menu', ssr: false },
     { src: '~plugins//emerald' },
-    { src: '~plugins/main.js' }
+    { src: '~plugins/main' },
+    { src: '~plugins/vue-slider' }
   ],
   /*
    ** Nuxt.js dev-modules

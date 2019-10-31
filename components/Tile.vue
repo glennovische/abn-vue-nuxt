@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: 'Tile',
   props: {
     tileClass: {
       type: String,

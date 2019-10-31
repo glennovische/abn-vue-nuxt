@@ -1,6 +1,6 @@
 <template>
-  <div class="d-flex justify-content-center flex-column h-100">
-    <div class="content">
+  <div class="d-flex justify-content-center flex-column h-100 col-6">
+    <div class="middle container no-bg content">
       <h3 class="mb-4">Wat gaan we bespreken</h3>
       <div class="mb-5">
         <b-container>
@@ -91,6 +91,7 @@
 import Tile from '~/components/Tile.vue'
 export default {
   name: 'Hypotheek',
+  layout: 'situation',
   components: {
     Tile
   },
